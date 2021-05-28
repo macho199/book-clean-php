@@ -20,6 +20,10 @@ use CleanPhp\Invoicer\Persistence\Zend\DataTable\TableGatewayFactory;
 use Zend\Stdlib\Hydrator\ClassMethods;
 
 return [
+    'db' => [
+        'driver' => 'Pdo',
+        'dsn' => 'pgsql:dbname=;host=;user=;password='
+    ],
     'service_manager' => [
         'factories' => [
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
