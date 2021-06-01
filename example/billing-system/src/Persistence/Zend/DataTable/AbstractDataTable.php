@@ -38,6 +38,7 @@ abstract class AbstractDataTable
         if ($this->hasIdentity($entity)) {
             $this->gaetway->update($data, ['id' => $entity->getId()]);
         } else {
+            unset($data['id']);
             $this->gateway->insert($data);
             $entity->setId($this->gateway->getLastInsertValue());
         }
