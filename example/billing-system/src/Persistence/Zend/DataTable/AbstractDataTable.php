@@ -36,7 +36,7 @@ abstract class AbstractDataTable
         $data = $this->hydrator->extract($entity);
         
         if ($this->hasIdentity($entity)) {
-            $this->gaetway->update($data, ['id' => $entity->getId()]);
+            $this->gateway->update($data, ['id' => $entity->getId()]);
         } else {
             unset($data['id']);
             $this->gateway->insert($data);
